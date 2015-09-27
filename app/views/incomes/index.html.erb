@@ -1,0 +1,36 @@
+<div class="form">
+  <h3> Search Empolyee </h3>
+    <%= form_tag incomes_index_path,:method=>'get' do %>
+      <p>
+        <%= text_field_tag :filter, '', placeholder: "Search...", autocomplete: :off %>
+  	    <button class="btn btn-primary disabled" type="submit">S E A R C H</button>
+      </p>
+    <% end %>
+</div>
+<table class="table table-striped table-hover ">
+  <thead>
+	  <tr class="info">
+		  <th> Category </th>
+		  <th> Amount </th>
+		  <th> Date </th>
+      <th> Show </th>
+		  <th> Edit </th>
+		  <th> Delete </th>
+		  <th></th>
+	  </tr>
+  </thead>
+  <tbody>
+    <% @incomes.each do |e| %>
+      <tr>
+        <td> <%= e.category %> </td>
+        <td> <%= e.amount %> </td>
+        <td> <%= e.date %> </td>
+        <td> <%= link_to "show",incomes_show_path(e) %></td>
+        <td> <%= link_to "Edit",incomes_edit_path(e) %></td>
+        <td> <%= link_to "Delete",incomes_destroy_path(e), method: :delete, data: { confirm:'are u sure?' } %></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @incomes %>

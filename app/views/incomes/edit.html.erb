@@ -1,0 +1,22 @@
+<div class="form">
+<%= form_for @incomes, url: incomes_update_path(user_id: current_user.id,:id => @incomes), method: :patch do |f| %>
+	<%= render "errors" %>
+	<h3> Income Details </h3>
+	 <p>
+		<%= f.label :category, 'Category :' %>
+		<%= f.collection_select(:category, IncomeCategory.all, :income_source, :income_source, {prompt: "Please Select Category"}, {:class=>'form-control'}) %>
+	 </p>
+
+	 <p>
+	   <%= f.label :amount, 'Amount :' %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+	   <%= f.text_field :amount,:placeholder => " Enter amount here." %>
+	 </p>
+
+	 <p>
+	   <%= f.label :date, 'Date :'%>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+	   <%= f.date_field :date %>
+	 </p>
+
+    <%= f.submit "S U B M I T", class: "btn btn-primary" %>
+<% end %>
+</div>

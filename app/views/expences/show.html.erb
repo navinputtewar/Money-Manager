@@ -1,0 +1,15 @@
+<div class="row">
+   <div class="col-sm-6">
+<table cellspacing="4" cellpadding="6" border="1">
+ <tbody>
+  <p> Name                 : <%= current_user.name %> </p>
+  <p> Expences Category    : <%= @expences.category %> </p>
+  <p> Amount               : <%= @expences.amount %> </p>
+  <p> Date                 : <%= @expences.date %> </p>
+ </tbody>
+</table>
+ </div>
+</div>
+
+<%= link_to "back",dashboard_index_path %> |
+<%= link_to "ADD Transaction",new_expence_transaction_path(expence_id: @expences.id) %>

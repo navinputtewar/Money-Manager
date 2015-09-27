@@ -1,0 +1,2 @@
+module IncomeCategoryHelper
+end

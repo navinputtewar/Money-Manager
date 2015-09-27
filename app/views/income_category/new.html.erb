@@ -1,0 +1,18 @@
+<div class="form">
+<%= form_for @income_category, url: income_category_create_path, method: :post do |f| %>
+	<%= render "errors" %>
+	<h3> Income Category </h3>
+	 <p>
+		<%= f.label :income_source, 'Category :' %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		<%= f.text_field :income_source, :placeholder => " Enter category here." %>
+	 </p>
+
+
+	 <p>
+	   <%= f.label :description, 'Description :' %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+	   <%= f.text_field :description,:placeholder => " Enter amount here." %>
+	 </p>
+
+    <%= f.submit "S U B M I T", class: "btn btn-primary" %>
+<% end %>
+</div>

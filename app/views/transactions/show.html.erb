@@ -1,0 +1,18 @@
+<div class="tabs">
+    <ul class="tab-links">
+        <li><a href="/transactions">Bank Statements/Incomes</a></li>
+        <li class="active"><a href="/transactions/show">Bank Statements/Expences</a></li>
+        <!-- <li><a href="#tab3">Tab #3</a></li>
+        <li><a href="#tab4">Tab #4</a></li> -->
+    </ul>
+ 
+    <div class="tab-content">
+        <div id="tab1" class="tab">
+            <p><%= render "income_list" %></p>
+        </div>
+ 
+        <div id="tab2" class="tab active">
+            <p><%= render "expence_list" %></p>
+        </div>
+    </div>
+</div>
