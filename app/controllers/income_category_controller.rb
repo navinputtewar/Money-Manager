@@ -1,14 +1,11 @@
 class IncomeCategoryController < ApplicationController
 
-  #--
-  # Created by- Navin Puttewar 
-  # Created on- 4/08/15 
-  # Purpose :- To get Qualifications of perticular Employee 
+  #-- 
+  # Purpose :- To get IncomeCategory of perticular User 
   #++
   def index
     @user = User.find(current_user.id)
     @income_category = @user.income_categories.paginate(:page => params[:page], :per_page => 5)
-    #@incomes = @incomes.like(params[:filter]) if params[:filter]
   end
 
   def new
@@ -17,9 +14,7 @@ class IncomeCategoryController < ApplicationController
   end
 
   #--
-  # Created by- Navin Puttewar 
-  # Created on- 4/08/15 
-  # Purpose :- To create Qualifications for perticular Employee 
+  # Purpose :- To create IncomeCategory for perticular User 
   #++
   def create
     @user = User.find(current_user.id)
@@ -34,6 +29,10 @@ class IncomeCategoryController < ApplicationController
   def show
     @income_category = IncomeCategory.find(params[:id])    
   end
+
+  #-- 
+  # Purpose :- To Update IncomeCategory for perticular User 
+  #++
 
   def edit
     @user = User.find(current_user.id)
@@ -52,10 +51,8 @@ class IncomeCategoryController < ApplicationController
     end
   end
 
-  #--
-  # Created by- Navin Puttewar 
-  # Created on- 4/08/15 
-  # Purpose :- To delete Qualification for perticular Employee 
+  #-- 
+  # Purpose :- To delete IncomeCategory for perticular User 
   #++
   def destroy
     @income_category = IncomeCategory.find(current_user.id)
@@ -67,9 +64,7 @@ class IncomeCategoryController < ApplicationController
   private
 
     #--
-    # Created by- Navin Puttewar 
-    # Created on- 4/08/15 
-    # Purpose :- To provide strong parameter for creating Qualification for perticular Employee 
+    # Purpose :- To provide strong parameter for creating IncomeCategory for perticular User 
     #++
     def income_category_params
       params.require(:income_category).permit(:income_source, :description)

@@ -1,9 +1,7 @@
 class IncomesController < ApplicationController
 
   #--
-  # Created by- Navin Puttewar 
-  # Created on- 4/08/15 
-  # Purpose :- To get Qualifications of perticular Employee 
+  # Purpose :- To get Income of perticular User 
   #++
   def index
     @user = User.find(current_user.id)
@@ -16,10 +14,8 @@ class IncomesController < ApplicationController
     @incomes = Income.new
   end
 
-  #--
-  # Created by- Navin Puttewar 
-  # Created on- 4/08/15 
-  # Purpose :- To create Qualifications for perticular Employee 
+  #-- 
+  # Purpose :- To create Income for perticular User 
   #++
   def create
     @user = User.find(current_user.id)
@@ -53,9 +49,7 @@ class IncomesController < ApplicationController
   end
 
   #--
-  # Created by- Navin Puttewar 
-  # Created on- 4/08/15 
-  # Purpose :- To delete Qualification for perticular Employee 
+  # Purpose :- To delete Income for perticular User 
   #++
   def destroy
     @incomes = Income.find(current_user.id)
@@ -67,9 +61,7 @@ class IncomesController < ApplicationController
   private
 
     #--
-    # Created by- Navin Puttewar 
-    # Created on- 4/08/15 
-    # Purpose :- To provide strong parameter for creating Qualification for perticular Employee 
+    # Purpose :- To provide strong parameter for creating Income for perticular User 
     #++
     def incomes_params
       params.require(:income).permit(:category, :amount, :date)

@@ -1,8 +1,6 @@
 class ExpencesController < ApplicationController
 
-  #--
-  # Created by- Navin Puttewar 
-  # Created on- 4/08/15 
+  #-- 
   # Purpose :- To get Expences of perticular User 
   #++
   def index
@@ -17,8 +15,6 @@ class ExpencesController < ApplicationController
   end
 
   #--
-  # Created by- Navin Puttewar 
-  # Created on- 4/08/15 
   # Purpose :- To create Expences for perticular User 
   #++
   def create
@@ -34,6 +30,10 @@ class ExpencesController < ApplicationController
   def show
     @expences = Expence.find(params[:id])
   end
+
+    #--
+  # Purpose :- To Update Expence for perticular User 
+  #++
 
   def edit
     @user = User.find(current_user.id)
@@ -53,8 +53,6 @@ class ExpencesController < ApplicationController
   end
 
   #--
-  # Created by- Navin Puttewar 
-  # Created on- 4/08/15 
   # Purpose :- To delete Expence for perticular User 
   #++
   def destroy
@@ -66,9 +64,7 @@ class ExpencesController < ApplicationController
 
   private
 
-    #--
-    # Created by- Navin Puttewar 
-    # Created on- 4/08/15 
+    #-- 
     # Purpose :- To provide strong parameter for creating Expence for perticular User 
     #++
     def expences_params
