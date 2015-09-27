@@ -52,8 +52,7 @@ class IncomesController < ApplicationController
   # Purpose :- To delete Income for perticular User 
   #++
   def destroy
-    @incomes = Income.find(current_user.id)
-    user_id = @incomes.user_id
+    @incomes = Income.find(params[:id])
     @incomes.destroy
     redirect_to dashboard_index_path
   end

@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   patch 'incomes/update/:id', to: 'incomes#update', as: 'incomes_update'
 
-  delete 'incomes/destroy', to: 'incomes#destroy', as: 'incomes_destroy'
+  delete 'incomes/destroy/:id', to: 'incomes#destroy', as: 'incomes_destroy'
 
 
   get 'dashboard/index'
@@ -42,11 +42,11 @@ Rails.application.routes.draw do
 
   get 'expences/show/:id', to: 'expences#show', as: 'expences_show'
 
-  get 'expences/edit', to: 'expences#edit', as: 'expences_edit'
+  get 'expences/edit/:id', to: 'expences#edit', as: 'expences_edit'
 
-  patch 'expences/update', to: 'expences#update', as: 'expences_update'
+  patch 'expences/update/:id', to: 'expences#update', as: 'expences_update'
 
-  delete 'expences/destroy', to: 'expences#destroy', as: 'expences_destroy'
+  delete 'expences/destroy/:id', to: 'expences#destroy', as: 'expences_destroy'
   
 
   get 'expence_category/index', to: 'expence_category#index', as: 'expence_category_index'
@@ -61,7 +61,7 @@ Rails.application.routes.draw do
 
   patch 'expence_category/update/:id', to: 'expence_category#update', as: 'expence_category_update'
 
-  delete 'expence_category/destroy', to: 'expence_category#destroy', as: 'expence_category_destroy'
+  delete 'expence_category/destroy/:id', to: 'expence_category#destroy', as: 'expence_category_destroy'
 
 
   get 'income_category/index', to: 'income_category#index', as: 'income_category_index'
@@ -76,7 +76,7 @@ Rails.application.routes.draw do
 
   patch 'income_category/update/:id', to: 'income_category#update', as: 'income_category_update'
 
-  delete 'income_category/destroy', to: 'income_category#destroy', as: 'income_category_destroy'
+  delete 'income_category/destroy/:id', to: 'income_category#destroy', as: 'income_category_destroy'
 
 
   resources :incomes do 

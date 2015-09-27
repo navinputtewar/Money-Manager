@@ -55,8 +55,7 @@ class IncomeCategoryController < ApplicationController
   # Purpose :- To delete IncomeCategory for perticular User 
   #++
   def destroy
-    @income_category = IncomeCategory.find(current_user.id)
-    user_id = @income_category.user_id
+    @income_category = IncomeCategory.find(params[:id])
     @income_category.destroy
     redirect_to dashboard_index_path
   end

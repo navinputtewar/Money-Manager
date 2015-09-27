@@ -56,8 +56,7 @@ class ExpencesController < ApplicationController
   # Purpose :- To delete Expence for perticular User 
   #++
   def destroy
-    @expences = Expence.find(current_user.id)
-    user_id = @expences.user_id
+    @expences = Expence.find(params[:id])
     @expences.destroy
     redirect_to dashboard_index_path
   end

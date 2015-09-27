@@ -13,7 +13,6 @@ class TransactionsController < ApplicationController
     @context = context
     @transaction = @context.transactions.create(transaction_params)
     @transaction.user_id = current_user.id
-    byebug
     if @transaction.valid?
       redirect_to dashboard_index_path, notice: "The transaction has been successfully created."
     else
@@ -50,7 +49,6 @@ private
       Income.find(params[:income_id])
     else
       id = params[:expence_id]
-      byebug
       Expence.find(params[:expence_id])
     end
   end 

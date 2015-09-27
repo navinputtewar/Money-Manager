@@ -51,8 +51,7 @@ class ExpenceCategoryController < ApplicationController
   # Purpose :- To delete ExpenceCategory for perticular User 
   #++
   def destroy
-    @expence_category = ExpenceCategory.find(current_user.id)
-    user_id = @expence_category.user_id
+    @expence_category = ExpenceCategory.find(params[:id])
     @expence_category.destroy
     redirect_to dashboard_index_path
   end
