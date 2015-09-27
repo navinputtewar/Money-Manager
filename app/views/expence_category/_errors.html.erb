@@ -1,0 +1,11 @@
+<% if @expence_category.errors.any? %>
+   <div id="error_explanation">
+     <div class="alert alert-danger">
+     <ul>
+      <% @expence_category.errors.full_messages.each do |msg| %>
+        <li> <%= msg %></li>
+      <% end %>
+     </ul>
+    	</div>
+    </div>
+<% end %>

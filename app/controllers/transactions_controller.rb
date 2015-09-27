@@ -1,5 +1,4 @@
 class TransactionsController < ApplicationController
-  before_action :new, only: [:income_new, :expence_new]
 
   def index
     @transaction = Transaction.all
@@ -12,11 +11,13 @@ class TransactionsController < ApplicationController
 
   def create
     @context = context
-    @transaction = @context.transactions.new(transaction_params)
+    @transaction = @context.transactions.create(transaction_params)
     @transaction.user_id = current_user.id
-
-    if @transaction.save
-      redirect_to context_url(context), notice: "The transaction has been successfully created."
+    byebug
+    if @transaction.valid?
+      redirect_to dashboard_index_path, notice: "The transaction has been successfully created."
+    else
+      render 'new'
     end
   end
 

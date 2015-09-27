@@ -4,13 +4,13 @@
 	<h3> Expence Category </h3>
 	 <p>
 		<%= f.label :expence_source, 'Category :' %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-		<%= f.text_field :expence_source, :placeholder => " Enter category here." %>
+		<%= f.text_field :expence_source, :placeholder => " Enter category here.",required: :true  %>
 	 </p>
 
 
 	 <p>
 	   <%= f.label :description, 'Description :' %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-	   <%= f.text_field :description,:placeholder => " Enter amount here." %>
+	   <%= f.text_field :description,:placeholder => " Enter amount here.",required: :true  %>
 	 </p>
 
     <%= f.submit "S U B M I T", class: "btn btn-primary" %>

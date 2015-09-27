@@ -24,7 +24,6 @@ class IncomesController < ApplicationController
   def create
     @user = User.find(current_user.id)
     @incomes = @user.incomes.create(incomes_params)
-    byebug
     if @incomes.valid?
       render 'show'
     else

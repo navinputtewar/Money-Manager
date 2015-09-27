@@ -1,8 +1,8 @@
-<% if @expences.errors.any? %>
+<% if @transaction.errors.any? %>
    <div id="error_explanation">
      <div class="alert alert-danger">
      <ul>
-      <% @expences.errors.full_messages.each do |msg| %>
+      <% @transaction.errors.full_messages.each do |msg| %>
         <li> <%= msg %></li>
       <% end %>
      </ul>

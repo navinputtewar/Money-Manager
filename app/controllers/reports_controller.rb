@@ -6,5 +6,7 @@ class ReportsController < ApplicationController
   end
 
   def by_date_range
+
   end
+
 end

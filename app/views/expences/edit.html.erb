@@ -10,12 +10,12 @@
 
 	 <p>
 	   <%= f.label :amount, 'Amount :' %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-	   <%= f.text_field :amount,:placeholder => " Enter amount here." %>
+	   <%= f.text_field :amount,:placeholder => " Enter amount here.", required: :true %>
 	 </p>
 
 	 <p>
 	   <%= f.label :date, 'Date :'%>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
-	   <%= f.date_field :date %>
+	   <%= f.date_field :date, required: :true %>
 	 </p>
 
     <%= f.submit "S U B M I T", class: "btn btn-primary" %>
