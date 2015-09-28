@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'reports/by_category'
-
-  get 'reports/by_date_range'
-
   devise_for :users, controllers: { 
                                     sessions: "users/sessions",
                                     registrations: "users/registrations",
@@ -90,6 +86,12 @@ Rails.application.routes.draw do
   end
 
   resources :transactions
+
+  get 'reports/by_category'
+
+  get 'reports/by_date_range'
+
+  get 'reports/by_week'
 
   get 'user_manual/about_us'
 
