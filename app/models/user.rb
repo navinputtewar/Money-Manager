@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :incomes
-  has_many :expences
-  has_many :transactions
-  has_many :income_categories
-  has_many :expence_categories
+  has_many :incomes, dependent: :destroy
+  has_many :expences, dependent: :destroy
+  has_many :transactions, dependent: :destroy
+  has_many :income_categories, dependent: :destroy
+  has_many :expence_categories, dependent: :destroy
 end
