@@ -18,11 +18,11 @@ class IncomesController < ApplicationController
   # Purpose :- To create Income for perticular User 
   #++
   def create
-    @user = User.find(current_user.id)
-    @incomes = @user.incomes.new(incomes_params)
+    user = User.find(current_user.id)
+    @incomes = user.incomes.new(incomes_params)
     if @incomes.valid?
       if @incomes.save
-        Transaction.create(date: params[:income][:date], amount: params[:income][:amount], user_id: current_user.id, trackble_id: @incomes.id, trackble_type: "Income" )
+       @incomes.transactions.create(date: params[:income][:date], amount: params[:income][:amount], user_id: current_user.id)
       render 'show'
       end
     else
