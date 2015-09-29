@@ -21,7 +21,11 @@ class ExpencesController < ApplicationController
     @user = User.find(current_user.id)
     @expences = @user.expences.create(expences_params)
     if @expences.valid?
-      render 'show'
+      if @expences.save
+        byebug
+        Transaction.create(date: params[:expence][:date], amount: params[:expence][:amount], user_id: current_user.id, trackble_id: @expences.id, trackble_type: "Expence" )
+        render 'show'
+      end
     else
       render 'new'
     end

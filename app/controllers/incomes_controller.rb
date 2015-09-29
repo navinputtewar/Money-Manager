@@ -19,9 +19,13 @@ class IncomesController < ApplicationController
   #++
   def create
     @user = User.find(current_user.id)
-    @incomes = @user.incomes.create(incomes_params)
+    @incomes = @user.incomes.new(incomes_params)
     if @incomes.valid?
+      if @incomes.save
+        byebug
+        Transaction.create(date: params[:income][:date], amount: params[:income][:amount], user_id: current_user.id, trackble_id: @incomes.id, trackble_type: "Income" )
       render 'show'
+      end
     else
       render 'new'
     end

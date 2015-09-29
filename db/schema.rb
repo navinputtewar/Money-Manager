@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926104336) do
+ActiveRecord::Schema.define(version: 20150929180554) do
 
   create_table "expence_categories", force: :cascade do |t|
     t.string   "expence_source", limit: 255
@@ -57,18 +57,15 @@ ActiveRecord::Schema.define(version: 20150926104336) do
 
   create_table "transactions", force: :cascade do |t|
     t.date     "date"
-    t.string   "from",           limit: 255
-    t.string   "to",             limit: 255
-    t.string   "amount",         limit: 255
-    t.string   "description",    limit: 255
-    t.integer  "transable_id",   limit: 4
-    t.string   "transable_type", limit: 255
-    t.integer  "user_id",        limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "amount",        limit: 255
+    t.integer  "trackble_id",   limit: 4
+    t.string   "trackble_type", limit: 255
+    t.integer  "user_id",       limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
-  add_index "transactions", ["transable_type", "transable_id"], name: "index_transactions_on_transable_type_and_transable_id", using: :btree
+  add_index "transactions", ["trackble_type", "trackble_id"], name: "index_transactions_on_trackble_type_and_trackble_id", using: :btree
   add_index "transactions", ["user_id"], name: "index_transactions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
