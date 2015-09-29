@@ -10,7 +10,7 @@ class Income < ActiveRecord::Base
   end
   
   def create_transaction
-    Transaction.create(date: params[:income][:date])
+    Transaction.create(date: params[:income][:date], amount: params[:income][:amount] )
   end
   
 end
