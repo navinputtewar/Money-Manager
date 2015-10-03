@@ -20,11 +20,6 @@ class TransactionsController < ApplicationController
     end
   end
 
-
-  def show
-    @transaction = Transaction.all
-  end
-
   def edit
     @context = context
     @transaction = context.transactions.find(params[:id])

@@ -1,8 +1,8 @@
 <h3> Expences as per the months</h3>
 <% @report_months.keys.sort.each do |month| %>
-<h2><%= month.strftime("%B %Y") %></h2>
+<h2> In <%= month.strftime("%B %Y") %></h2>
   <% for expence in @report_months[month] %>
-    <p><b><%= expence.category %></b> <%= expence.amount %>Rs. For The Month Of <%= expence.date.to_date.to_s(:long) %></p>
+    <p><b><%= expence.category %></b> of <%= expence.amount %>Rs. For The Month Of <%= expence.date.to_date.to_s(:long) %></p>
   <% end %>
  <% end %>
 
