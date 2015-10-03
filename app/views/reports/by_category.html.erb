@@ -1,5 +1,5 @@
 <h3> Expences By Category </h3>
-<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<%= javascript_include_tag "jsapi", "chartkick" %>
 <%= pie_chart Expence.group(:category).count %>
 
 
