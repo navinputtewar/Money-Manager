@@ -1,8 +1,8 @@
 class ReportsController < ApplicationController
 
   def by_category
-  	@user = User.find_by_id(current_user.id)
-  	@reports = @user.expences.all.group(:category)
+  	#@user = User.find_by_id(current_user.id)
+  	@reports = Expence.all
   end
 
   def by_date_range
