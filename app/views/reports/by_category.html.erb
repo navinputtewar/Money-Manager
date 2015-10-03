@@ -1,5 +1,5 @@
 <h3> Expences By Category </h3>
-<%= javascript_include_tag "jsapi", "chartkick" %>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <%= pie_chart Expence.select(:category).group(:category).count(:amount) %>
 
 <table class="table table-striped table-hover ">
@@ -11,6 +11,12 @@
     </tr>
   </thead>
   <tbody>
-    
+    <% @reports.each do |e| %>
+      <tr>
+        <td> <%= e.category %> </td>
+        <td> <%= e.amount %> </td>
+        <td></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
