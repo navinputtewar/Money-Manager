@@ -41,7 +41,9 @@
       <%= session[:request] = request.referer %>
       <%= session[:ip] = request.remote_ip %>
       <%= puts request.referer %>
-      <%= puts request.remote_ip %>
+      <%= logger.info(request.remote_ip) %>
+      <%= Rails.logger.debug("debug::" + request.remote_ip) %>
+      <%= Rails.logger.debug("debug::" + request.referer) %>
 </head>
 <body>
   <div class="container">
