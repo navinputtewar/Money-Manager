@@ -38,6 +38,10 @@
       ga('send', 'pageview');
 
     </script>
+      <%= session[:request] = request.referer %>
+      <%= session[:ip] = request.remote_ip %>
+      <%= puts request.referer %>
+      <%= puts request.remote_ip %>
 </head>
 <body>
   <div class="container">
